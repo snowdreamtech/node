@@ -62,22 +62,22 @@ jobs:
               http_proxy=${{ env.http_proxy }}
               https_proxy=${{ env.http_proxy }}
               env.no_proxy=${{ env.no_proxy }}
-            platforms: linux/amd64,linux/arm64
+            platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/riscv64,linux/s390x
             push: true
             tags: |
               snowdreamtech/node:latest
-              snowdreamtech/node:18.19.1
-              snowdreamtech/node:18.19
-              snowdreamtech/node:18
+              snowdreamtech/node:21.7.3
+              snowdreamtech/node:21.7
+              snowdreamtech/node:21
               ghcr.io/snowdreamtech/node:latest
-              ghcr.io/snowdreamtech/node:18.19.1
-              ghcr.io/snowdreamtech/node:18.19
-              ghcr.io/snowdreamtech/node:18
+              ghcr.io/snowdreamtech/node:21.7.3
+              ghcr.io/snowdreamtech/node:21.7
+              ghcr.io/snowdreamtech/node:21
               snowdreamtech/nodejs:latest
-              snowdreamtech/nodejs:18.19.1
-              snowdreamtech/nodejs:18.19
-              snowdreamtech/nodejs:18
+              snowdreamtech/nodejs:21.7.3
+              snowdreamtech/nodejs:21.7
+              snowdreamtech/nodejs:21
               ghcr.io/snowdreamtech/nodejs:latest
-              ghcr.io/snowdreamtech/nodejs:18.19.1
-              ghcr.io/snowdreamtech/nodejs:18.19
-              ghcr.io/snowdreamtech/nodejs:18
+              ghcr.io/snowdreamtech/nodejs:21.7.3
+              ghcr.io/snowdreamtech/nodejs:21.7
+              ghcr.io/snowdreamtech/nodejs:21
