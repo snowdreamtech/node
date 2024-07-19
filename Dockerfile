@@ -1,14 +1,8 @@
-FROM alpine:3.20.0
+FROM snowdreamtech/alpine:3.20.0
 
 LABEL maintainer="snowdream <sn0wdr1am@qq.com>"
 
-RUN echo "@main https://dl-cdn.alpinelinux.org/alpine/edge/main" | tee -a /etc/apk/repositories \
-    && echo "@community https://dl-cdn.alpinelinux.org/alpine/edge/community" | tee -a /etc/apk/repositories \
-    && echo "@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing" | tee -a /etc/apk/repositories \
-    && apk add --no-cache musl-locales \
-    musl-locales-lang \
-    tzdata \
-    openssl \
-    wget \
-    ca-certificates \                                                                                                                                                                                                      
-    && update-ca-certificates    
+RUN apk add --no-cache nodejs=20.15.1-r0 \
+    npm=10.8.0-r0 \
+    pnpm@community=9.5.0-r0 \
+    yarn=1.22.22-r0
