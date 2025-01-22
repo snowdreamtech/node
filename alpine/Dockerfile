@@ -30,7 +30,6 @@ RUN if [ "${USER}" != "root" ]; then \
 
 RUN echo "@3.18main https://dl-cdn.alpinelinux.org/alpine/v3.18/main" | tee -a /etc/apk/repositories \
     && echo "@3.18community https://dl-cdn.alpinelinux.org/alpine/v3.18/community" | tee -a /etc/apk/repositories \
-    && echo "@3.18testing https://dl-cdn.alpinelinux.org/alpine/v3.18/testing" | tee -a /etc/apk/repositories \
     && apk add --no-cache \
     nodejs@3.18main=${NODEJS_VERSION}\
     npm@3.18main \
