@@ -14,7 +14,7 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
 
 # keep the docker container running
 ENV KEEPALIVE=1 \
-NODEJS_VERSION=18.19.0+dfsg-6~deb12u2
+    NODEJS_VERSION=18.19.0+dfsg-6~deb12u2
 
 ARG GID=1000 \
     UID=1000  \
