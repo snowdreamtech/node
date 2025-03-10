@@ -5,6 +5,7 @@ on:
     branches:
       - "main"
       - "dev"
+      - "openssh"
       - "feat/**"
       - "feature/**"
       - "fix/**"
@@ -26,6 +27,7 @@ on:
     branches:
       - "main"
       - "dev"
+      - "openssh"
       - "feat/**"
       - "feature/**"
       - "fix/**"
