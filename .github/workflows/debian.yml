@@ -14,15 +14,15 @@ on:
       - "[0-9]+.[0-9]+.[0-9]+"
       - "v[0-9]+.[0-9]+.[0-9]+"
       - "V[0-9]+.[0-9]+.[0-9]+"
-      - "debian-[0-9]+.[0-9]+.[0-9]+"
+      - "openssh-debian-[0-9]+.[0-9]+.[0-9]+"
       - "[0-9]+.[0-9]+"
       - "v[0-9]+.[0-9]+"
       - "V[0-9]+.[0-9]+"
-      - "debian-[0-9]+.[0-9]+"
+      - "openssh-debian-[0-9]+.[0-9]+"
       - "[0-9]+"
       - "v[0-9]+"
       - "V[0-9]+"
-      - "debian-[0-9]+"
+      - "openssh-debian-[0-9]+"
   pull_request:
     branches:
       - "main"
@@ -125,7 +125,7 @@ jobs:
             type=ref,enable=${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/master' && github.event_name != 'schedule' }},priority=600,prefix=,suffix=-debian,event=branch
             type=edge,enable=true,priority=700,prefix=,suffix=-debian,branch=dev
             type=raw,enable=${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && github.event_name != 'schedule' }},priority=200,prefix=,suffix=,value=debian
-            type=raw,enable=${{ startsWith(github.ref, 'refs/tags/') }},priority=200,prefix=,suffix=,value=debian
+            type=raw,enable=${{ startsWith(github.ref, 'refs/tags/') }},priority=200,prefix=,suffix=,value=openssh-debian
             type=schedule,enable=true,priority=1000,prefix=,suffix=-debian,pattern=nightly
             type=match,enable=true,priority=800,prefix=,suffix=-debian,pattern=\d+.\d+.\d+,group=0,value=
             type=match,enable=true,priority=800,prefix=,suffix=-debian,pattern=\d+.\d+,group=0,value=
@@ -133,7 +133,7 @@ jobs:
             type=ref,enable=${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/master' && github.event_name != 'schedule' }},priority=600,prefix=,suffix=-bookworm,event=branch
             type=edge,enable=true,priority=700,prefix=,suffix=-bookworm,branch=dev
             type=raw,enable=${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && github.event_name != 'schedule' }},priority=200,prefix=,suffix=,value=bookworm
-            type=raw,enable=${{ startsWith(github.ref, 'refs/tags/') }},priority=200,prefix=,suffix=,value=bookworm
+            type=raw,enable=${{ startsWith(github.ref, 'refs/tags/') }},priority=200,prefix=,suffix=,value=openssh-bookworm
             type=schedule,enable=true,priority=1000,prefix=,suffix=-bookworm,pattern=nightly
             type=match,enable=true,priority=800,prefix=,suffix=-bookworm,pattern=\d+.\d+.\d+,group=0,value=
             type=match,enable=true,priority=800,prefix=,suffix=-bookworm,pattern=\d+.\d+,group=0,value=
