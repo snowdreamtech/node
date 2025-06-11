@@ -9,12 +9,12 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.source="https://github.com/snowdreamtech/node" \
     org.opencontainers.image.vendor="Snowdream Tech" \
-    org.opencontainers.image.version="22.13.1" \
+    org.opencontainers.image.version="22.15.1" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/node"
 
 # keep the docker container running
 ENV KEEPALIVE=0 \
-    NODEJS_VERSION=22.13.1-r0
+    NODEJS_VERSION=22.15.1-r0
 
 ARG GID=1000 \
     UID=1000  \
