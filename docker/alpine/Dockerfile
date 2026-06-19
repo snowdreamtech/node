@@ -1,4 +1,4 @@
-# Base Image (Alpine Variant)
+# Node Image (Alpine Variant)
 # Extends snowdreamtech/alpine with additional tooling and configuration.
 
 FROM snowdreamtech/alpine:3.24.0
@@ -16,21 +16,24 @@ ARG BUILDTIME \
     PGID=0 \
     PUID=0 \
     USER=root \
-    WORKDIR=/root
+    WORKDIR=/root \
+    APP_VERSION=22.16.0-r2
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
-    org.opencontainers.image.title="Base Image Based On Alpine" \
-    org.opencontainers.image.description="Docker Images for Base on Alpine. (i386, amd64, arm32v6, arm32v7, arm64, ppc64le, riscv64, s390x)" \
-    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/base" \
-    org.opencontainers.image.base.name="snowdreamtech/base:alpine" \
+    org.opencontainers.image.title="Node Image Based On Alpine" \
+    org.opencontainers.image.description="Docker Images for Node on Alpine. (i386, amd64, arm32v6, arm32v7, arm64, ppc64le, riscv64, s390x)" \
+    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/node" \
+    org.opencontainers.image.base.name="snowdreamtech/alpine:3.24.0" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.source="https://github.com/snowdreamtech/base" \
+    org.opencontainers.image.source="https://github.com/snowdreamtech/node" \
     org.opencontainers.image.vendor="Snowdream Tech" \
-    org.opencontainers.image.version="${VERSION:-3.24.0}" \
+# x-release-please-start-version
+    org.opencontainers.image.version="${VERSION:-22.16.0}" \
+# x-release-please-end
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
-    org.opencontainers.image.url="https://github.com/snowdreamtech/base"
+    org.opencontainers.image.url="https://github.com/snowdreamtech/node"
 
 # Runtime Environment Configuration
 ENV KEEPALIVE=${KEEPALIVE} \
@@ -42,12 +45,14 @@ ENV KEEPALIVE=${KEEPALIVE} \
     PGID=${PGID} \
     PUID=${PUID} \
     USER=${USER} \
-    WORKDIR=${WORKDIR}
+    WORKDIR=${WORKDIR} \
+    APP_VERSION=${APP_VERSION}
 
-# Additional tooling and configuration for Base image
+# Additional tooling and configuration for Node image
 RUN apk update \
     && apk add --no-cache \
-    vim
+    nodejs=${APP_VERSION} \
+    npm
 
 # Container Orchestration Files
 COPY entrypoint.d /usr/local/bin/entrypoint.d
