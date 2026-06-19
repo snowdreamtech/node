@@ -17,7 +17,7 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    APP_VERSION=22.22.2-1.el10_1
+    NODEJS_VERSION=22.22.2-1.el10_1
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
@@ -46,13 +46,13 @@ ENV KEEPALIVE=${KEEPALIVE} \
     PUID=${PUID} \
     USER=${USER} \
     WORKDIR=${WORKDIR} \
-    APP_VERSION=${APP_VERSION}
+    NODEJS_VERSION=${NODEJS_VERSION}
 
 # Additional tooling and configuration for Node image
 RUN set -eux \
     && dnf -y --allowerasing update \
     && dnf -y --allowerasing install \
-    nodejs-${APP_VERSION} \
+    nodejs-${NODEJS_VERSION} \
     npm \
     && dnf -y --allowerasing autoremove \
     && dnf -y --allowerasing clean all \

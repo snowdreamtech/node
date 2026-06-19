@@ -17,7 +17,7 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    APP_VERSION=22.16.0-r2
+    NODEJS_VERSION=22.16.0-r2
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
@@ -46,12 +46,12 @@ ENV KEEPALIVE=${KEEPALIVE} \
     PUID=${PUID} \
     USER=${USER} \
     WORKDIR=${WORKDIR} \
-    APP_VERSION=${APP_VERSION}
+    NODEJS_VERSION=${NODEJS_VERSION}
 
 # Additional tooling and configuration for Node image
 RUN apk update \
     && apk add --no-cache \
-    nodejs=${APP_VERSION} \
+    nodejs=${NODEJS_VERSION} \
     npm
 
 # Container Orchestration Files

@@ -18,7 +18,7 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    APP_VERSION=20.19.2+dfsg-1
+    NODEJS_VERSION=20.19.2+dfsg-1
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
@@ -48,13 +48,13 @@ ENV DEBIAN_FRONTEND=${DEBIAN_FRONTEND} \
     PUID=${PUID} \
     USER=${USER} \
     WORKDIR=${WORKDIR} \
-    APP_VERSION=${APP_VERSION}
+    NODEJS_VERSION=${NODEJS_VERSION}
 
 # Additional tooling and configuration for Node image
 RUN set -eux \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy update \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy install --no-install-recommends \
-    nodejs=${APP_VERSION} \
+    nodejs=${NODEJS_VERSION} \
     npm \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy --purge autoremove \
     && DEBIAN_FRONTEND=noninteractive apt-get -qqy clean \
