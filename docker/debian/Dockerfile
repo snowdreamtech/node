@@ -18,7 +18,7 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    NODEJS_VERSION=20.19.2+dfsg-1
+    NODEJS_VERSION=20.19.2+dfsg-1+deb13u2
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \

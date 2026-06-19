@@ -210,7 +210,7 @@ Images follow semantic versioning with the format: `{major}.{minor}.{patch}-{var
 Examples:
 
 - `snowdreamtech/node:20.19.2-debian`
-- `snowdreamtech/node:22.16.0-alpine`
+- `snowdreamtech/node:24.16.0-alpine`
 - `snowdreamtech/node:22.22.2-rocky`
 
 This format allows:
