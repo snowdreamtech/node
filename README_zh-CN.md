@@ -210,7 +210,7 @@ services:
 示例：
 
 - `snowdreamtech/node:20.19.2-debian`
-- `snowdreamtech/node:24.16.0-alpine`
+- `snowdreamtech/node:24.17.0-alpine`
 - `snowdreamtech/node:22.22.2-rocky`
 
 此格式允许：

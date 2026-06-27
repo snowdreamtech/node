@@ -17,7 +17,7 @@ ARG BUILDTIME \
     PUID=0 \
     USER=root \
     WORKDIR=/root \
-    NODEJS_VERSION=24.16.0-r0
+    NODEJS_VERSION=24.17.0-r0
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
@@ -29,7 +29,7 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.source="https://github.com/snowdreamtech/node" \
     org.opencontainers.image.vendor="Snowdream Tech" \
 # x-release-please-start-version
-    org.opencontainers.image.version="${VERSION:-24.16.0}" \
+    org.opencontainers.image.version="${VERSION:-24.17.0}" \
 # x-release-please-end
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
