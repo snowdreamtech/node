@@ -141,7 +141,7 @@ jobs:
       - name: "⚡ Setup UniRTM"
         uses: snowdreamtech/setup-unirtm@cacfb4d739ee46d4a4b2528b02b508df2f560706 # v0.4.0
         with:
-          unirtm-version: "0.25.0"
+          unirtm-version: "0.25.3"
           install: true
           trust: true
         env:
@@ -239,6 +239,8 @@ jobs:
     steps:
       - name: "🏗️ Checkout Repository"
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
       - name: "📝 Orchestrate Release Lifecycle (Release Please)"
         id: release
@@ -356,10 +358,6 @@ jobs:
               }
               { if (count == 1) print $0 }
               ' "$file" > "log.tmp.md"
-
-              echo "Force updating Git tag $tag to current commit..."
-              git tag -f "$tag"
-              git push --force "https://${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "refs/tags/$tag" || true
 
               echo "Synchronizing GitHub Release for $tag..."
               gh release create "$tag" --notes-file "log.tmp.md" 2>/dev/null || \
