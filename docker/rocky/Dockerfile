@@ -1,7 +1,7 @@
 # Node Image (Rocky Variant)
 # Extends snowdreamtech/rocky with additional tooling and configuration.
 
-FROM snowdreamtech/rocky:10.2.0
+FROM ghcr.io/snowdreamtech/rocky:10.2.0
 
 # Build-time Configuration
 ARG BUILDTIME \
@@ -28,9 +28,7 @@ LABEL org.opencontainers.image.authors="Snowdream Tech" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.source="https://github.com/snowdreamtech/node" \
     org.opencontainers.image.vendor="Snowdream Tech" \
-# x-release-please-start-version
-    org.opencontainers.image.version="${VERSION:-22.22.2}" \
-# x-release-please-end
+    org.opencontainers.image.version="${VERSION}" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
     org.opencontainers.image.url="https://github.com/snowdreamtech/node"
