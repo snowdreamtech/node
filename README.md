@@ -211,7 +211,7 @@ Examples:
 
 - `snowdreamtech/node:20.19.2-debian`
 - `snowdreamtech/node:24.18.1-alpine`
-- `snowdreamtech/node:22.22.2-rocky`
+- `snowdreamtech/node:22.23.1-rocky`
 
 This format allows:
 
