@@ -6,7 +6,6 @@
       "component": "alpine",
       "include-component-in-tag": true,
       "release-as": "24.16.0",
-
       "changelog-path": "CHANGELOG.md",
       "exclude-paths": ["docker/alpine/CHANGELOG.md"],
       "extra-files": [
@@ -22,7 +21,6 @@
       "component": "debian",
       "include-component-in-tag": true,
       "release-as": "20.19.2",
-
       "changelog-path": "CHANGELOG.md",
       "exclude-paths": ["docker/debian/CHANGELOG.md"],
       "extra-files": [
