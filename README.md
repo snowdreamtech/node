@@ -209,13 +209,13 @@ Images follow semantic versioning with the format: `{major}.{minor}.{patch}-{var
 
 Examples:
 
-- `snowdreamtech/node:20.19.2-debian`
-- `snowdreamtech/node:24.18.1-alpine`
-- `snowdreamtech/node:22.23.1-rocky`
+- `snowdreamtech/node:<version>-debian`
+- `snowdreamtech/node:<version>-alpine`
+- `snowdreamtech/node:<version>-rocky`
 
 This format allows:
 
-- **Full version pinning**: `20.19.2-debian` (exact version)
+- **Full version pinning**: `<version>-debian` (exact version)
 - **Variant latest tag**: `latest-debian` (tracks most recent release for Debian)
 - **Global latest tag**: `latest` (tracks most recent release, defaults to Debian)
 

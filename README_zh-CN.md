@@ -209,13 +209,13 @@ services:
 
 示例：
 
-- `snowdreamtech/node:20.19.2-debian`
-- `snowdreamtech/node:24.17.0-alpine`
-- `snowdreamtech/node:22.23.1-rocky`
+- `snowdreamtech/node:<version>-debian`
+- `snowdreamtech/node:<version>-alpine`
+- `snowdreamtech/node:<version>-rocky`
 
 此格式允许：
 
-- **完整版本固定**：`20.19.2-debian`（精确版本）
+- **完整版本固定**：`<version>-debian`（精确版本）
 - **变体最新标签**：`latest-debian`（跟踪 Debian 最新版本）
 - **全局最新标签**：`latest`（跟踪最新版本，默认指向 Debian）
 
