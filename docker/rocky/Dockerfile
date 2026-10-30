@@ -1,14 +1,15 @@
-# Base Image (Rocky Variant)
+# Node Image (Rocky Variant)
 # Extends snowdreamtech/rocky with additional tooling and configuration.
 
 FROM ghcr.io/snowdreamtech/rocky:10.2.0
 
 # Build-time Configuration
 # x-release-please-start-version
-ARG VERSION="10.2.0"
+ARG NODEJS_VERSION=22.23.2
 # x-release-please-end
 
 ARG BUILDTIME \
+    VERSION \
     REVISION \
     KEEPALIVE=0 \
     CAP_NET_BIND_SERVICE=0 \
@@ -23,17 +24,17 @@ ARG BUILDTIME \
 
 # Standard OCI Metadata (https://github.com/opencontainers/image-spec)
 LABEL org.opencontainers.image.authors="Snowdream Tech" \
-    org.opencontainers.image.title="Base Image Based On Rocky" \
-    org.opencontainers.image.description="Docker Images for Base on Rocky. (amd64, arm64, ppc64le, s390x)" \
-    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/base" \
-    org.opencontainers.image.base.name="snowdreamtech/base:rocky" \
+    org.opencontainers.image.title="Node Image Based On Rocky" \
+    org.opencontainers.image.description="Docker Images for Node on Rocky. (amd64, arm64, ppc64le, s390x)" \
+    org.opencontainers.image.documentation="https://hub.docker.com/r/snowdreamtech/node" \
+    org.opencontainers.image.base.name="snowdreamtech/rocky:10.2.0" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.source="https://github.com/snowdreamtech/base" \
+    org.opencontainers.image.source="https://github.com/snowdreamtech/node" \
     org.opencontainers.image.vendor="Snowdream Tech" \
     org.opencontainers.image.version="${VERSION}" \
     org.opencontainers.image.created="${BUILDTIME}" \
     org.opencontainers.image.revision="${REVISION}" \
-    org.opencontainers.image.url="https://github.com/snowdreamtech/base"
+    org.opencontainers.image.url="https://github.com/snowdreamtech/node"
 
 # Runtime Environment Configuration
 ENV KEEPALIVE=${KEEPALIVE} \
@@ -45,13 +46,18 @@ ENV KEEPALIVE=${KEEPALIVE} \
     PGID=${PGID} \
     PUID=${PUID} \
     USER=${USER} \
-    WORKDIR=${WORKDIR}
+    WORKDIR=${WORKDIR} \
+    NODEJS_VERSION=${NODEJS_VERSION}
 
-# Additional tooling and configuration for Base image
+# Additional tooling and configuration for Node image
 RUN set -eux \
-    && dnf -y --allowerasing --setopt=*.skip_if_unavailable=true update \
-    && dnf -y --allowerasing --setopt=*.skip_if_unavailable=true install \
-    vim-enhanced \
+    && dnf -y --allowerasing update \
+    && dnf -y --allowerasing install \
+    "nodejs-${NODEJS_VERSION}*" \
+    npm \
+    || dnf -y --allowerasing install \
+    nodejs \
+    npm \
     && dnf -y --allowerasing autoremove \
     && dnf -y --allowerasing clean all \
     && rm -rf /var/cache/dnf \

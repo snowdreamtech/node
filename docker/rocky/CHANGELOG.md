@@ -1,30 +1,22 @@
 # Changelog
 
-## [10.2.0](https://github.com/snowdreamtech/base/compare/rocky-v10.2.0...rocky-v10.2.0) (2026-10-28)
+## [22.23.2](https://github.com/snowdreamtech/node/compare/rocky-v22.23.1...rocky-v22.23.2) (2026-09-03)
 
 
-### 🚀 Features
+### 🐛 Bug Fixes
 
-* initial release of snowdreamtech base docker images powered by unirtm ([25f55c8](https://github.com/snowdreamtech/base/commit/25f55c84e8fba977d226739e9871d61e1428fdeb))
-
-## [10.1.0](https://github.com/snowdreamtech/base/compare/rocky-v10.1.0...rocky-v10.1.0) (2026-04-29)
-
-
-### 🛠 Refactoring
-
-* **docker:** align Dockerfiles with base image structure ([232574f](https://github.com/snowdreamtech/base/commit/232574fed8418f8c7f257d001e951361dfa467a0))
-* remove redundant docker-entrypoint.sh files ([87c576b](https://github.com/snowdreamtech/base/commit/87c576b27731ad11c5bc0ebc661e07c5a09ff1c1))
-* reorganize distribution variants into docker directory ([67a8c91](https://github.com/snowdreamtech/base/commit/67a8c911e21801bf12b3e83d02e22f3b3f59a2ba))
-
-
-### 📖 Documentation
-
-* add detailed comments to entrypoint initialization scripts ([f42cbaa](https://github.com/snowdreamtech/base/commit/f42cbaab6edfbc5c38c2a636dfd8651fea900940))
+* **docker:** update nodejs version to 22.23.2-1.el10_2 to resolve npm dependency conflict on rocky ([bbbfa3f](https://github.com/snowdreamtech/node/commit/bbbfa3fd2f34f17d770c879dcdea7c6c0ac6ee81))
+* **docker:** update nodejs version to resolve npm dependency conflict on rocky ([fdcdd04](https://github.com/snowdreamtech/node/commit/fdcdd044c0cc740f701d9dcacafb5816311dd8de))
 
 
 ### ♻️ Miscellaneous Chores
 
-* **main:** release 0.14.0 ([043d2a4](https://github.com/snowdreamtech/base/commit/043d2a4202505e42c645e899c6731f5fb8f52c8e))
-* release 0.6.1 ([f6fc042](https://github.com/snowdreamtech/base/commit/f6fc042cad7d1c4991a20657655bc4b6b339d0d9))
-* release 0.7.1 ([5535492](https://github.com/snowdreamtech/base/commit/5535492160f3525dff06ff9f0c6d78147467bed3))
-* **release:** v0.4.0 - Fix Dependabot docker-compose detection ([e91f7d8](https://github.com/snowdreamtech/base/commit/e91f7d882f3c7b23260f4da02f0e5e53d6399968))
+* release main ([6650f38](https://github.com/snowdreamtech/node/commit/6650f38ff46156c5f3c403b5634ec565aaa20b68))
+* **release:** deduplicate CHANGELOG headers ([b2a0205](https://github.com/snowdreamtech/node/commit/b2a020533ab364cf227e06ff904724a3577e3ce3))
+
+## [22.23.1](https://github.com/snowdreamtech/node/compare/rocky-v22.23.1...rocky-v22.23.1) (2026-08-21)
+
+
+### 🐛 Bug Fixes
+
+* **docker:** update nodejs version to resolve npm dependency conflict on rocky ([fdcdd04](https://github.com/snowdreamtech/node/commit/fdcdd044c0cc740f701d9dcacafb5816311dd8de))
